@@ -31,7 +31,7 @@ class Logout extends Component {
                 >
                     <div
                         style={{
-                            marginBottom: '-2em'
+                            marginBottom: '-1em'
                         }}
                     >
                         <button className='submit-btn' type='submit'>

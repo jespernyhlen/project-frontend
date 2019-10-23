@@ -14,6 +14,7 @@ const ChartsTrade = props => {
     const [items, setItems] = useState([]);
     const [userInfo, setUserInfo] = useState({});
     const [data, setData] = useState(props.datasets);
+    const [balanceFlash, setBalanceFlash] = useState('');
 
     useEffect(() => {
         getUser();
@@ -35,7 +36,15 @@ const ChartsTrade = props => {
         setItems(tradeItems);
     }, [props]);
 
+    const balanceFlashMessage = message => {
+        setBalanceFlash(message);
+        const timer = setTimeout(() => {
+            setBalanceFlash('');
+        }, 1000);
+    };
+
     const updateAccount = (stockname, balance, amount) => {
+        let oldBalance = userInfo.balance;
         let newAccountDetails = userInfo;
         newAccountDetails.balance = balance;
         newAccountDetails[stockname] = amount;
@@ -56,8 +65,15 @@ const ChartsTrade = props => {
             .then(res => res.json())
             .then(response => {
                 if (response.data) {
+                    console.log(oldBalance);
                     getUser();
                     console.log('deposit succes');
+                    if (oldBalance > balance) {
+                        balanceFlashMessage('balance-decrease');
+                    } else {
+                        balanceFlashMessage('balance-increase');
+                    }
+                    console.log(balance);
                 } else {
                     console.log('something when wrong with balance deposit');
                 }
@@ -91,7 +107,9 @@ const ChartsTrade = props => {
                 <React.Fragment>
                     <div>
                         {' '}
-                        <h1>Balance: ${userInfo.balance}</h1>
+                        <h1 className={'chart-balance ' + balanceFlash}>
+                            Balance: ${userInfo.balance}
+                        </h1>
                     </div>
 
                     <div

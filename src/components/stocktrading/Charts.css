@@ -1,5 +1,5 @@
 .input-range {
-    margin: 3em 0;
+    margin: 3em 0 1.5em;
 }
 
 .chart {
@@ -11,10 +11,29 @@
     padding: 1em;
     /* border: 1px solid rgb(9, 9, 14); */
     border-radius: 3px;
-    margin: 1.5% 0;
+    margin: 0.5% 0;
     background: #1c1f27;
     text-align: center;
 }
+
+.chart-balance {
+    padding: 0.5em;
+    border-radius: 3px;
+    margin: 0.5% 0;
+    background: #1c1f27;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.balance-increase {
+    color: #0e900e;
+}
+
+.balance-decrease {
+    color: #b71616;
+}
+
 .trade-item-diff {
     margin-bottom: 1em;
     color: red;
@@ -38,7 +57,7 @@
 }
 
 .trade-item {
-    width: 24%;
+    width: 24.5%;
     padding: 1em;
     border-radius: 3px;
     background: rgb(28, 31, 39);

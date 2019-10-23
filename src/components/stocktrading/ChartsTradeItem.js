@@ -49,6 +49,7 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
         if (buyAmount > userInfo[item.label]) {
             transactionMessage('Not enough units to sell');
         } else {
+            transactionMessage('Successful transaction');
             let newBalance = parseInt(userInfo.balance) + parseInt(buyTotal);
             let stockName = item.label.toLowerCase();
             let newStockAmount =
@@ -88,7 +89,13 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
                         value={roundNr(buyAmount)}
                         onChange={e => onSliderChange(e)}
                     />
-                    <p style={{ textAlign: 'center', padding: '1em 0' }}>
+                    <p
+                        style={{
+                            textAlign: 'center',
+                            padding: '1em 0 1.5em',
+                            lineHeight: '0'
+                        }}
+                    >
                         {message}
                     </p>
 

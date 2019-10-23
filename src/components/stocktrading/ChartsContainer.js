@@ -7,7 +7,7 @@ import io from 'socket.io-client';
 
 const server =
     process.env.NODE_ENV === 'development'
-        ? 'http://localhost:1337'
+        ? 'http://localhost:8777'
         : 'https://project-backend-socket.jespernyhlenjs.me';
 
 class ChartsContainer extends Component {
