@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 import Login from './components/Login';
@@ -37,7 +37,21 @@ const App = () => {
         <Router>
             <div className='App'>
                 <NavBar userLoggedIn={userLoggedIn} />
+                <Route exact path='/'>
+                    {userLoggedIn ? (
+                        <Redirect to='/logout' />
+                    ) : (
+                        <Redirect to='/login' />
+                    )}
+                </Route>
 
+                <Route exact path='/login'>
+                    {userLoggedIn ? (
+                        <Redirect to='/logout' />
+                    ) : (
+                        <Redirect to='/login' />
+                    )}
+                </Route>
                 <Route
                     exact
                     path='/login'
