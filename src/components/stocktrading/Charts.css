@@ -1,0 +1,82 @@
+.input-range {
+    margin: 3em 0;
+}
+
+.chart {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.chart-contain {
+    padding: 1em;
+    /* border: 1px solid rgb(9, 9, 14); */
+    border-radius: 3px;
+    margin: 1.5% 0;
+    background: #1c1f27;
+    text-align: center;
+}
+.trade-item-diff {
+    margin-bottom: 1em;
+    color: red;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.trade-item-label {
+    margin-bottom: 1em;
+    font-weigth: 600;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.trade-item {
+    width: 24%;
+    padding: 1em;
+    border-radius: 3px;
+    background: rgb(28, 31, 39);
+}
+
+.trade-btn {
+    font-size: 0.8em;
+    padding: 1em 0em;
+    border-radius: 3px;
+    width: 47%;
+    border: 0;
+    color: #eee;
+    cursor: pointer;
+}
+
+.trade-btn.btn-buy:hover {
+    background: #164a58;
+}
+
+.trade-btn.btn-sell:hover {
+    background: #712929;
+}
+
+.btn-buy {
+    background: rgb(34, 100, 117);
+}
+
+.btn-sell {
+    background: rgb(148, 55, 55);
+}
+
+@media screen and (max-width: 600px) {
+    .chart-row {
+        display: inline !important;
+    }
+
+    .trade-item {
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+}

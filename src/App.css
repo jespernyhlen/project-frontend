@@ -1,22 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+}
+
+body {
+    background: linear-gradient(#292d37, #252a35);
+    color: #ccc;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
 .App {
-  text-align: center;
+    margin: 0 0 2em;
 }
 
-.App-logo {
-  height: 40vmin;
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-bottom: 0.5em;
+    font-weight: 100;
+}
+p {
+    line-height: 1.6em;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.6em;
+}
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.75em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:focus,
+button:active {
+    outline: none;
 }
 
-.App-link {
-  color: #09d3ac;
+a {
+    color: #ccc;
+    text-decoration: none;
+    border-bottom: 1px solid #aaa !important;
+}
+a:hover {
+    color: #aaa;
+}
+
+#graph {
+    height: 500px;
+    width: 300px;
+}
+
+#chart_container {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #666;
+}
+#chart {
+    float: left;
+}
+#legend {
+    float: left;
+    margin-left: 15px;
+}
+#offset_form {
+    float: left;
+    margin: 2em 0 0 15px;
+    font-size: 13px;
+}
+#y_axis {
+    float: left;
+    width: 40px;
+}
+
+#chart_container {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#chart {
+    float: left;
+}
+#legend {
+    float: left;
+    margin-left: 15px;
+}
+#offset_form {
+    float: left;
+    margin: 2em 0 0 15px;
+    font-size: 13px;
+}
+#y_axis {
+    float: left;
+    width: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.3em 1em 1.15em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+    margin-bottom: 1em;
+    background: rgb(28, 31, 39);
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    border-bottom: 0 !important;
+    padding: 1em;
+}
+
+.css-26l3qy-menu {
+    color: #222 !important;
+}
+
+#loading-bar-spinner.spinner {
+    left: 50%;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 19 !important;
+    animation: loading-bar-spinner 400ms linear infinite;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+    width: 40px;
+    height: 40px;
+    border: solid 4px transparent;
+    border-top-color: #00c8b1 !important;
+    border-left-color: #00c8b1 !important;
+    border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+    0% {
+        transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }

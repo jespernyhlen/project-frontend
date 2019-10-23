@@ -1,0 +1,226 @@
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+    width: 95%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #939393;
+    padding: 0.5em;
+    margin: 0.5em 0.5em 1em;
+    color: #ccc;
+    font-weight: 100;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus {
+    outline: 0;
+}
+
+::placeholder {
+    color: #aaa;
+    font-weight: 100;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1c1f27 inset !important;
+    -webkit-text-fill-color: #aaa !important;
+}
+
+.sub-header {
+    color: #aaa;
+}
+
+.main {
+    height: 100vh;
+    position: relative;
+    border: 3px solid green;
+}
+
+.form-logo {
+    font-family: Roboto, FontAwesome;
+    font-size: 4em;
+    margin-bottom: 0px;
+    color: rgb(194, 40, 28);
+    text-shadow: 0 1px 21px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+    max-width: 400px;
+    text-align: center;
+    background: rgb(28, 31, 39);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 1em 2em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 200px);
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.submit-btn {
+    font-size: 1em;
+    padding: 1em 4em;
+    width: 100%;
+    border-radius: 3px;
+    background: #148e79;
+    border: 0;
+    color: #eee;
+    cursor: pointer;
+    margin: 1em 0 2em;
+    transition: 0.2 all;
+}
+
+.submit-btn:hover {
+    color: #bbb;
+    background: #186356;
+}
+
+.error-text {
+    font-size: 0.8em;
+    width: 100%;
+    color: #d83d32;
+    padding-left: 0.7em;
+    text-align: left;
+    font-weight: 100;
+}
+
+/* DATEPICKER */
+
+.date-picker {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.date-picker .selected-date {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+}
+
+.date-picker .dates {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    margin-top: 0.3rem;
+    border-radius: 4px;
+    border: 2px solid #4753542e;
+}
+
+.date-picker .dates.active {
+    display: block;
+}
+.selected-date {
+    cursor: pointer;
+    position: relative !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>")
+        no-repeat !important;
+    background-position: right 0px top 50% !important;
+}
+
+.datepicker-active {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: green
+            url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>"),
+        linear-gradient(to bottom, #ffffff 0%, #fff 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.4em top 50%, 0 0;
+    background-size: 1.1em auto, 100%;
+}
+
+.date-picker .dates .months {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+}
+
+.date-picker .dates .months .arrows {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+    font-size: 20px;
+}
+
+.date-picker .dates .months .arrows:hover {
+    background-color: #f3f3f3;
+}
+
+.date-picker .dates .months .arrows:active {
+    background-color: #00ca85;
+}
+
+.date-picker .dates .days {
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 1px;
+}
+
+.date-picker .dates .days .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+}
+
+.date-picker .dates .days .day.selected {
+    background-color: #90d4ffc9;
+}
+
+.form-control.date {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0.6em 1.4em 0.5em 0.8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+        linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+}
+
+.day:focus {
+    outline: 1px solid #90d4ffc9;
+}
+
+.evenly {
+    justify-content: space-evenly !important;
+}
+
+.close.active {
+    padding: 1em;
+}
