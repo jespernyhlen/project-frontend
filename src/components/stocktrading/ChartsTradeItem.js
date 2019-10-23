@@ -81,8 +81,25 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
                     >
                         {(diffRound >= 0 ? '+' : '') + diffRound}
                     </div>
-                    <p>Volume: {buyAmount}</p>
-                    <p>Cost: ${buyTotal}</p>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}
+                    >
+                        <p>Volume:</p>
+                        <p>{buyAmount}</p>
+                    </div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}
+                    >
+                        <p>Cost:</p>
+                        <p>${buyTotal}</p>
+                    </div>
+
                     <InputRange
                         maxValue={10}
                         minValue={0}
@@ -93,7 +110,8 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
                         style={{
                             textAlign: 'center',
                             padding: '1em 0 1.5em',
-                            lineHeight: '0'
+                            lineHeight: '0',
+                            zIndex: '100'
                         }}
                     >
                         {message}

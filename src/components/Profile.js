@@ -23,8 +23,10 @@ const Profile = () => {
     ];
     const handleSubmit = e => {
         e.preventDefault();
-        setDeposit(0);
-        updateBalance(parseInt(balance) + parseInt(deposit));
+        if (deposit !== 0) {
+            setDeposit(0);
+            updateBalance(parseInt(balance) + parseInt(deposit));
+        }
     };
     useEffect(() => {
         getUserBalance();

@@ -77,7 +77,7 @@ class Register extends Component {
             body: JSON.stringify({
                 firstname: this.state.firstname,
                 lastname: this.state.lastname,
-                email: this.state.email,
+                email: this.state.email.toLowerCase(),
                 date: this.state.year,
                 password: this.state.password
             })

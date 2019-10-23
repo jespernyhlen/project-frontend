@@ -41,9 +41,6 @@ class ChartsContainer extends Component {
     componentDidMount() {
         this.socket = io.connect(server);
 
-        let graphs = {};
-        let first = true;
-
         this.socket.on('connect', () => {
             console.log('Connected');
         });

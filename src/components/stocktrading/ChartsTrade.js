@@ -9,6 +9,10 @@ const apiURL =
         ? 'http://localhost:8888/'
         : 'https://project-backend-api.jespernyhlenjs.me/';
 
+const roundNr = number => {
+    return Math.round(number * 100) / 100;
+};
+
 const ChartsTrade = props => {
     const [loading, setLoading] = useState(true);
     const [items, setItems] = useState([]);
@@ -22,6 +26,7 @@ const ChartsTrade = props => {
 
     useEffect(() => {
         setLoading(data[0].data.length > 2 ? false : true);
+        console.log(data);
         let tradeItems = [];
         data.map((item, index) => {
             tradeItems.push(
@@ -104,29 +109,14 @@ const ChartsTrade = props => {
     return (
         <div className='chart'>
             {!loading ? (
-                <React.Fragment>
-                    <div>
-                        {' '}
-                        <h1 className={'chart-balance ' + balanceFlash}>
-                            Balance: ${userInfo.balance}
-                        </h1>
-                    </div>
-
-                    <div
-                        className='chart-contain'
-                        style={{
-                            heigth: '100px',
-                            display: 'flex',
-                            justifyContent: 'space-around'
-                        }}
-                    >
-                        <div>Units: {userInfo.gold}</div>
-                        <div>Units: {userInfo.silver}</div>
-                        <div>Units: {userInfo.bronze}</div>
-                        <div>Units: {userInfo.stone}</div>
-                    </div>
-                </React.Fragment>
+                <h1
+                    className='chart-section-label'
+                    style={{ marginTop: '-1em' }}
+                >
+                    MARKET
+                </h1>
             ) : null}
+
             <div
                 className='chart-row'
                 style={{
@@ -152,6 +142,74 @@ const ChartsTrade = props => {
                     </div>
                 )}
             </div>
+            {!loading ? (
+                <React.Fragment>
+                    <h1 className='chart-section-label'>PORTFOLIO</h1>
+                    <div>
+                        {' '}
+                        <h1 className={'chart-balance ' + balanceFlash}>
+                            Balance: ${userInfo.balance}
+                        </h1>
+                    </div>
+                    <div
+                        className='chart-contain'
+                        style={{
+                            padding: '1em 0'
+                        }}
+                    >
+                        <div
+                            className='chart-contain'
+                            style={{
+                                heigth: '100px',
+                                display: 'flex',
+                                justifyContent: 'space-around',
+                                fontFamily: 'Roboto, FontAwesome',
+                                padding: '1em 0'
+                            }}
+                        >
+                            {data.map((value, index) => {
+                                return (
+                                    <div
+                                        className={index > 0 ? 'brd-left' : ''}
+                                        style={{
+                                            width: '25%',
+                                            padding: '0 3em'
+                                        }}
+                                    >
+                                        <h1 className='trade-item-label'>
+                                            {value.label.toUpperCase()}
+                                        </h1>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'space-between'
+                                            }}
+                                        >
+                                            <p>Units:</p>
+                                            <p>{userInfo[value.label]}</p>
+                                        </div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'space-between'
+                                            }}
+                                        >
+                                            <p>Value:</p>
+                                            <p>
+                                                $
+                                                {roundNr(
+                                                    userInfo[value.label] *
+                                                        value.data.slice(-1)[0]
+                                                )}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </React.Fragment>
+            ) : null}
         </div>
     );
 };
