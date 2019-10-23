@@ -39,6 +39,12 @@ class NavBar extends Component {
         }
         return (
             <nav>
+                <div
+                    style={{ fontFamily: 'Roboto, FontAwesome' }}
+                    className='nav-brand'
+                >
+                    <Link to='/'>&#xf201;</Link>
+                </div>
                 <ul>{loginLogout}</ul>
             </nav>
         );

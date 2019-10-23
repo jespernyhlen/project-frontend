@@ -30,7 +30,7 @@ const initialState = () => {
 
 const apiURL =
     process.env.NODE_ENV === 'development'
-        ? 'http://localhost:1338/'
+        ? 'http://localhost:8888/'
         : 'https://project-backend-api.jespernyhlenjs.me/';
 
 class Register extends Component {
@@ -117,7 +117,7 @@ class Register extends Component {
     render() {
         return (
             <div className='login-form'>
-                <h1>Register user</h1>
+                <h1 style={{ marginTop: '0.5em' }}>Register user</h1>
                 <p className='sub-header'> Register a new account</p>
 
                 <form

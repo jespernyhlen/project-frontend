@@ -173,7 +173,7 @@ button:active {
 a {
     color: #ccc;
     text-decoration: none;
-    border-bottom: 1px solid #aaa !important;
+    border-bottom: 1px solid #aaa;
 }
 a:hover {
     color: #aaa;
@@ -243,6 +243,21 @@ nav ul {
 nav ul li a {
     border-bottom: 0 !important;
     padding: 1em;
+}
+
+.nav-brand {
+    font-family: Roboto, FontAwesome;
+    position: absolute;
+    left: 0;
+    margin-left: 1em;
+    font-size: 2em;
+    top: 0;
+    margin-top: 0.4em;
+}
+
+.nav-brand a {
+    border-bottom: 0;
+    color: #b52a2a;
 }
 
 .css-26l3qy-menu {

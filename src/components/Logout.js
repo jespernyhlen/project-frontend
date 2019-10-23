@@ -29,7 +29,11 @@ class Logout extends Component {
                     style={{ margin: '2em 0 1em' }}
                     onSubmit={this.handleSubmit}
                 >
-                    <div>
+                    <div
+                        style={{
+                            marginBottom: '-2em'
+                        }}
+                    >
                         <button className='submit-btn' type='submit'>
                             Logout
                         </button>

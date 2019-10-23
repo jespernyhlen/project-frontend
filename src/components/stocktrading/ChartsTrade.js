@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const apiURL =
     process.env.NODE_ENV === 'development'
-        ? 'http://localhost:1338/'
+        ? 'http://localhost:8888/'
         : 'https://project-backend-api.jespernyhlenjs.me/';
 
 const ChartsTrade = props => {
