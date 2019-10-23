@@ -7,7 +7,7 @@ import './Login.css';
 const apiURL =
     process.env.NODE_ENV === 'development'
         ? 'http://localhost:1338/'
-        : 'https://project-api.jespernyhlenjs.me/';
+        : 'https://project-backend-api.jespernyhlenjs.me/';
 
 const initialState = () => {
     let initState = {

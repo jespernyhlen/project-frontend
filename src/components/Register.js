@@ -31,7 +31,7 @@ const initialState = () => {
 const apiURL =
     process.env.NODE_ENV === 'development'
         ? 'http://localhost:1338/'
-        : 'https://me-api.jespernyhlenjs.me/';
+        : 'https://project-backend-api.jespernyhlenjs.me/';
 
 class Register extends Component {
     constructor(props) {
