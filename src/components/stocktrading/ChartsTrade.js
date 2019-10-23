@@ -164,7 +164,7 @@ const ChartsTrade = props => {
                                 display: 'flex',
                                 justifyContent: 'space-around',
                                 fontFamily: 'Roboto, FontAwesome',
-                                padding: '1em 0'
+                                padding: '0'
                             }}
                         >
                             {data.map((value, index) => {
@@ -185,8 +185,12 @@ const ChartsTrade = props => {
                                                 justifyContent: 'space-between'
                                             }}
                                         >
-                                            <p>Units:</p>
-                                            <p>{userInfo[value.label]}</p>
+                                            <p style={{ color: '#aaa' }}>
+                                                Units:
+                                            </p>
+                                            <p style={{ fontWeight: '500' }}>
+                                                {userInfo[value.label]}
+                                            </p>
                                         </div>
                                         <div
                                             style={{
@@ -194,8 +198,10 @@ const ChartsTrade = props => {
                                                 justifyContent: 'space-between'
                                             }}
                                         >
-                                            <p>Value:</p>
-                                            <p>
+                                            <p style={{ color: '#aaa' }}>
+                                                Value:
+                                            </p>
+                                            <p style={{ fontWeight: '500' }}>
                                                 $
                                                 {roundNr(
                                                     userInfo[value.label] *

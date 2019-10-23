@@ -88,9 +88,9 @@ class ChartsContainer extends Component {
 
     setGradientColor = (canvas, color) => {
         const ctx = canvas.getContext('2d');
-        const gradient = ctx.createLinearGradient(0, 0, 20000, 1000);
+        const gradient = ctx.createLinearGradient(0, 0, 5000, 5000);
         gradient.addColorStop(0, color);
-        gradient.addColorStop(0.95, 'rgba(133, 255, 144, 0.9)');
+        gradient.addColorStop(1, 'rgba(133, 255, 144, 0)');
         return gradient;
     };
 
@@ -106,10 +106,10 @@ class ChartsContainer extends Component {
                 'rgba(132, 55, 250, 1)'
             ];
             let backgroundColors = [
-                'rgba(250, 200, 70, 0.01)',
-                'rgba(6, 250, 213, 0.01)',
-                'rgba(32, 255, 50, 0.01)',
-                'rgba(132, 55, 250, 0.01)'
+                'rgba(250, 200, 70, 0.0)',
+                'rgba(6, 250, 213, 0.0)',
+                'rgba(32, 255, 50, 0.0)',
+                'rgba(132, 55, 250, 0.0)'
             ];
             data.datasets.forEach((set, i) => {
                 set.backgroundColor = this.setGradientColor(

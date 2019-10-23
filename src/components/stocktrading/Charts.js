@@ -45,7 +45,7 @@ class Charts extends Component {
                                         fontColor: '#aaa'
                                     },
                                     gridLines: {
-                                        color: '#333'
+                                        color: '#1d1d1d'
                                     }
                                 }
                             ],
@@ -65,7 +65,7 @@ class Charts extends Component {
                                         fontColor: '#ccc'
                                     },
                                     gridLines: {
-                                        color: '#333'
+                                        color: '#1d1d1d'
                                     }
                                 }
                             ]
@@ -81,6 +81,7 @@ class Charts extends Component {
                             display: true,
                             text: 'Stock Chart',
                             fontSize: 25,
+                            fontStyle: 300,
                             fontColor: '#ddd'
                         },
                         legend: {

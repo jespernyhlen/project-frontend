@@ -87,8 +87,8 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
                             justifyContent: 'space-between'
                         }}
                     >
-                        <p>Volume:</p>
-                        <p>{buyAmount}</p>
+                        <p style={{ color: '#aaa' }}>Volume:</p>
+                        <p style={{ fontWeight: '500' }}>{buyAmount}</p>
                     </div>
                     <div
                         style={{
@@ -96,8 +96,8 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
                             justifyContent: 'space-between'
                         }}
                     >
-                        <p>Cost:</p>
-                        <p>${buyTotal}</p>
+                        <p style={{ color: '#aaa' }}>Cost:</p>
+                        <p style={{ fontWeight: '500' }}>${buyTotal}</p>
                     </div>
 
                     <InputRange
