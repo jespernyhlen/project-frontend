@@ -14,7 +14,6 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
     useEffect(() => {
         setBuyTotal(roundNr(buyAmount * item.data[item.data.length - 1]));
     });
-    useEffect(() => {});
 
     const onSliderChange = e => {
         setBuyAmount(e);
@@ -23,6 +22,8 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
     const onClickBuy = () => {
         if (buyTotal > userInfo.balance) {
             transactionMessage('Not enough credits');
+        } else if (buyTotal < 1) {
+            transactionMessage('Transaction at zero is not allowed');
         } else if (buyTotal < 4) {
             transactionMessage('No bids at this price');
         } else {
@@ -38,16 +39,16 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
 
     const transactionMessage = message => {
         setMessage(message);
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             setMessage('');
         }, 3000);
     };
 
     const onClickSell = () => {
-        console.log(userInfo[item.label]);
-        console.log('Cost : ' + buyTotal);
         if (buyAmount > userInfo[item.label]) {
             transactionMessage('Not enough units to sell');
+        } else if (buyAmount < 1) {
+            transactionMessage('Transaction at zero is not allowed');
         } else {
             transactionMessage('Successful transaction');
             let newBalance = parseInt(userInfo.balance) + parseInt(buyTotal);

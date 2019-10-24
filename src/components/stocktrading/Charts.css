@@ -17,7 +17,7 @@
 }
 
 .chart-balance {
-    padding: 0.5em;
+    padding: 0.7em;
     border-radius: 3px;
     margin: 0.5% 0;
     background: #1c1f27;
@@ -29,6 +29,7 @@
 .chart-section-label {
     padding-left: 0.5em;
     text-align: left;
+    font-weight: 400;
     font-size: 1.5em;
     padding: 0.5em 0.5em 0.1em;
 }
@@ -47,7 +48,7 @@
     text-align: center;
 }
 
-.brd-right {
+.brd-left {
     border-left: 1px solid #444;
 }
 
@@ -65,9 +66,11 @@
 
 .trade-item-label {
     margin-bottom: 1em;
-    font-weigth: 600;
+    font-weight: 400;
     font-size: 1.5rem;
     text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5em;
 }
 
 .trade-item {

@@ -75,16 +75,12 @@ class ChartsContainer extends Component {
                     );
                     that.setState(that.state);
                 }
-                // console.log(that.state.data.datasets[0].data);
             }
         });
     }
     componentWillUnmount() {
         this.socket.close();
     }
-    // componentWillMount() {
-    //     this.getChartData();
-    // }
 
     setGradientColor = (canvas, color) => {
         const ctx = canvas.getContext('2d');

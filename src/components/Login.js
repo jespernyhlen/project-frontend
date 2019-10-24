@@ -30,8 +30,6 @@ class Login extends Component {
         e.preventDefault();
         this.setLoading(true);
 
-        console.log(this.state.loading);
-
         const validated = ValidateForm(
             'name',
             'lastname',

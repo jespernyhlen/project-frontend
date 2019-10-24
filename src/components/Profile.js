@@ -71,7 +71,6 @@ const Profile = () => {
             .then(res => res.json())
             .then(response => {
                 if (response.data) {
-                    console.log('deposit succes');
                     setMessage(
                         '$' +
                             deposit +

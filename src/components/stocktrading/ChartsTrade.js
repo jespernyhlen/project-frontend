@@ -26,7 +26,6 @@ const ChartsTrade = props => {
 
     useEffect(() => {
         setLoading(data[0].data.length > 2 ? false : true);
-        console.log(data);
         let tradeItems = [];
         data.map((item, index) => {
             tradeItems.push(
@@ -43,7 +42,7 @@ const ChartsTrade = props => {
 
     const balanceFlashMessage = message => {
         setBalanceFlash(message);
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             setBalanceFlash('');
         }, 1000);
     };
@@ -70,15 +69,12 @@ const ChartsTrade = props => {
             .then(res => res.json())
             .then(response => {
                 if (response.data) {
-                    console.log(oldBalance);
                     getUser();
-                    console.log('deposit succes');
                     if (oldBalance > balance) {
                         balanceFlashMessage('balance-decrease');
                     } else {
                         balanceFlashMessage('balance-increase');
                     }
-                    console.log(balance);
                 } else {
                     console.log('something when wrong with balance deposit');
                 }
@@ -170,10 +166,11 @@ const ChartsTrade = props => {
                             {data.map((value, index) => {
                                 return (
                                     <div
+                                        key={index}
                                         className={index > 0 ? 'brd-left' : ''}
                                         style={{
                                             width: '25%',
-                                            padding: '0 3em'
+                                            padding: '0 1em'
                                         }}
                                     >
                                         <h1 className='trade-item-label'>

@@ -15,10 +15,11 @@ const jwt = require('jsonwebtoken');
 const isExpired = token => {
     if (token && jwt.decode(token)) {
         const expiry = jwt.decode(token).exp;
-        const now = new Date();
-        return now.getTime() > expiry * 10;
+        if (Date.now() >= expiry * 1000) {
+            return false;
+        }
     }
-    return false;
+    return true;
 };
 
 const App = () => {

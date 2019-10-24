@@ -40,6 +40,7 @@ class Charts extends Component {
                                         fontSize: 18
                                     },
                                     ticks: {
+                                        maxTicksLimit: 15,
                                         beginAtZero: true,
                                         padding: 25,
                                         fontColor: '#aaa'
