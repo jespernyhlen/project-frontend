@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-
 import NavBar from './components/NavBar';
 import Login from './components/Login';
 import Profile from './components/Profile';
