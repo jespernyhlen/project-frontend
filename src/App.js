@@ -13,18 +13,24 @@ import './App.css';
 const jwt = require('jsonwebtoken');
 
 const isExpired = token => {
+    console.log(token);
     if (token && jwt.decode(token)) {
+        var seconds = 1000;
+        var d = new Date();
+        var t = d.getTime();
+
         const expiry = jwt.decode(token).exp;
-        if (Date.now() >= expiry * 1000) {
-            return false;
+        if (expiry > Math.round(t / seconds)) {
+            return true;
         }
     }
-    return true;
+    return false;
 };
 
 const App = () => {
     let validUserToken = isExpired(localStorage.getItem('token'));
     const [userLoggedIn, setUserLoggedIn] = useState(validUserToken);
+    console.log(validUserToken);
 
     const login = () => {
         setUserLoggedIn(true);
@@ -33,6 +39,7 @@ const App = () => {
     const logout = () => {
         setUserLoggedIn(false);
     };
+    console.log(userLoggedIn);
 
     return (
         <Router>
@@ -57,11 +64,7 @@ const App = () => {
                     exact
                     path='/login'
                     render={props => (
-                        <Login
-                            {...props}
-                            login={login.bind(this)}
-                            logout={logout.bind(this)}
-                        />
+                        <Login {...props} login={login.bind(this)} />
                     )}
                 />
                 <Route exact path='/register' component={Register} />
@@ -69,23 +72,29 @@ const App = () => {
                 {userLoggedIn
                     ? [
                           <Route
+                              key={'logout'}
                               exact
                               path='/logout'
                               render={props => (
                                   <Logout
                                       {...props}
-                                      login={login.bind(this)}
                                       logout={logout.bind(this)}
                                   />
                               )}
                           />,
 
                           <Route
+                              key={'chart'}
                               exact
                               path='/chart'
                               component={ChartsContainer}
                           />,
-                          <Route exact path='/profile' component={Profile} />
+                          <Route
+                              key={'profile'}
+                              exact
+                              path='/profile'
+                              component={Profile}
+                          />
                       ]
                     : null}
             </div>

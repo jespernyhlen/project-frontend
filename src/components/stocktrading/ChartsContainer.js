@@ -53,7 +53,7 @@ class ChartsContainer extends Component {
             if (that.state.data) {
                 var length = that.state.data.labels.length;
                 if (length < 40) {
-                    values.map((value, index) => {
+                    values.forEach((value, index) => {
                         that.state.data.datasets[index].data.push(
                             values[index].startingPoint
                         );
@@ -63,7 +63,7 @@ class ChartsContainer extends Component {
                     );
                     that.setState(that.state);
                 } else if (length >= 40) {
-                    values.map((value, index) => {
+                    values.forEach((value, index) => {
                         that.state.data.datasets[index].data.shift();
                         that.state.data.datasets[index].data.push(
                             values[index].startingPoint
@@ -78,6 +78,7 @@ class ChartsContainer extends Component {
             }
         });
     }
+
     componentWillUnmount() {
         this.socket.close();
     }

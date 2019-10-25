@@ -73,7 +73,10 @@ class DateForm extends Component {
     }
 
     showDatePicker(e) {
-        if (!this.checkEventPathForClass(e.composedPath(), 'dates') || this.checkEventPathForClass(e.composedPath(), 'close')) {
+        if (
+            !this.checkEventPathForClass(e.composedPath(), 'dates') ||
+            this.checkEventPathForClass(e.composedPath(), 'close')
+        ) {
             this.setState({
                 datePickerActive: !this.state.datePickerActive
             });
@@ -172,6 +175,7 @@ class DateForm extends Component {
         let daysElements = document.getElementsByClassName('day');
         Array.from(daysElements, child => {
             child.classList.remove('selected');
+            return null;
         });
         e.target.classList.add('selected');
     }
@@ -255,8 +259,8 @@ class DateForm extends Component {
                     className={
                         this.state.datePickerActive ? 'close active' : 'dates'
                     }
-                >Click to close
-                    
+                >
+                    Click to close
                 </div>
             </div>
         );

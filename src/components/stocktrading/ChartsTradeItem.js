@@ -24,7 +24,7 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
             transactionMessage('Not enough credits');
         } else if (buyTotal < 1) {
             transactionMessage('Transaction at zero is not allowed');
-        } else if (buyTotal < 4) {
+        } else if (buyTotal / buyAmount < 4) {
             transactionMessage('No bids at this price');
         } else {
             transactionMessage('Successful transaction');

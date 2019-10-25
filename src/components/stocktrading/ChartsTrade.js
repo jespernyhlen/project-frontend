@@ -27,7 +27,7 @@ const ChartsTrade = props => {
     useEffect(() => {
         setLoading(data[0].data.length > 2 ? false : true);
         let tradeItems = [];
-        data.map((item, index) => {
+        data.forEach((item, index) => {
             tradeItems.push(
                 <ChartsTradeItem
                     key={index}
@@ -38,7 +38,7 @@ const ChartsTrade = props => {
             );
         });
         setItems(tradeItems);
-    }, [props]);
+    }, [props, userInfo, data]);
 
     const balanceFlashMessage = message => {
         setBalanceFlash(message);
