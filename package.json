@@ -24,6 +24,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "PORT=8082 react-scripts start & mocha test/**/*.js",
+        "test-scrutinizer": "PORT=8082 react-scripts start & nyc --all --reporter=clover mocha test/**/*.js",
         "eject": "react-scripts eject",
         "deploy": "npm run build && rsync -av build/* admin@134.209.16.134:/var/www/project-frontend.jespernyhlenjs.me/html/"
     },
