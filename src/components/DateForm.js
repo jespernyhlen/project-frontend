@@ -227,6 +227,7 @@ class DateForm extends Component {
                 <input
                     readOnly
                     // value={this.formatDate(this.state.selected_date)}
+
                     value={this.formatDate(this.state.selected_date)}
                     onClick={() =>
                         this.props.data.changeYear(

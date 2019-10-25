@@ -10,6 +10,7 @@ import ChartsContainer from './components/stocktrading/ChartsContainer.js';
 
 import './App.css';
 
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const isExpired = token => {
@@ -28,8 +29,9 @@ const isExpired = token => {
 };
 
 const App = () => {
-    let validUserToken = isExpired(localStorage.getItem('token'));
+    let validUserToken = isExpired(window.localStorage.getItem('token'));
     const [userLoggedIn, setUserLoggedIn] = useState(validUserToken);
+
     console.log(validUserToken);
 
     const login = () => {
@@ -39,6 +41,7 @@ const App = () => {
     const logout = () => {
         setUserLoggedIn(false);
     };
+
     console.log(userLoggedIn);
 
     return (

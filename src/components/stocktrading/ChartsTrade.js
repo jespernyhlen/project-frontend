@@ -128,6 +128,7 @@ const ChartsTrade = props => {
                     items
                 ) : (
                     <div
+                        class='loading-data'
                         style={{
                             margin: '2em auto'
                         }}

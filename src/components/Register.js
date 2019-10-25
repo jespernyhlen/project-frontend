@@ -51,6 +51,9 @@ class Register extends Component {
         if (validated === true) {
             this.registerUser();
         }
+        if (validated !== true) {
+            this.setLoading(false);
+        }
 
         this.setState({
             firstnameError: validated.firstnameError,

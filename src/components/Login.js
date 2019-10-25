@@ -42,6 +42,10 @@ class Login extends Component {
             this.loginUser();
         }
 
+        if (validated !== true) {
+            this.setLoading(false);
+        }
+
         this.setState({
             emailError: validated.emailError,
             passwordError: validated.passwordError
@@ -72,12 +76,24 @@ class Login extends Component {
                     this.setLoading(false);
                     this.props.history.push('/profile');
                 } else {
-                    this.setState({
-                        message: 'No user with provided Email/Password'
-                    });
+                    this.transactionMessage(
+                        'No user with provided Email/Password'
+                    );
+
                     this.setLoading(false);
                 }
             });
+    }
+
+    transactionMessage(message) {
+        this.setState({
+            message: message
+        });
+        const timer = setTimeout(() => {
+            this.setState({
+                message: ''
+            });
+        }, 3000);
     }
 
     render() {

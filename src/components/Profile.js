@@ -92,11 +92,11 @@ const Profile = () => {
     };
 
     return (
-        <div className='login-form'>
+        <div className='login-form' id='profile'>
             <p className='form-logo'>&#xf201;</p>
 
             <h1>Stocktrader</h1>
-            <p className='sub-header'> Login to access stock trading</p>
+            <p className='sub-header'>Deposit money and visit trading page</p>
             <br></br>
             <h2>Balance: ${balance}</h2>
             <br></br>

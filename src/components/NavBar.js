@@ -28,11 +28,11 @@ class NavBar extends Component {
             loginLogout = (
                 <React.Fragment>
                     <li>
-                        <Link to='/login'>Logga in</Link>
+                        <Link to='/login'>Login</Link>
                     </li>
 
                     <li>
-                        <Link to='/register'>Registrera</Link>
+                        <Link to='/register'>Register</Link>
                     </li>
                 </React.Fragment>
             );

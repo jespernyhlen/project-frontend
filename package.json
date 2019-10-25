@@ -17,12 +17,13 @@
         "react-scripts": "3.2.0",
         "socket.io-client": "^2.3.0",
         "jsonwebtoken": "^8.5.1",
-        "react-select": "^3.0.8"
+        "react-select": "^3.0.8",
+        "dotenv": "^8.1.0"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "PORT=8082 react-scripts start & mocha test/**/*.js",
         "eject": "react-scripts eject",
         "deploy": "npm run build && rsync -av build/* admin@134.209.16.134:/var/www/project-frontend.jespernyhlenjs.me/html/"
     },
@@ -49,6 +50,10 @@
         ]
     },
     "devDependencies": {
-        "eslint-plugin-react-hooks": "^2.1.2"
+        "eslint-plugin-react-hooks": "^2.1.2",
+        "http-server": "^0.11.1",
+        "mocha": "^4.1.0",
+        "nyc": "^14.1.1",
+        "selenium-webdriver": "^3.6.0"
     }
 }
