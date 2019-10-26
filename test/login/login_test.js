@@ -13,7 +13,7 @@ const By = webdriver.By;
 let browser;
 
 // Test suite
-test.describe('Logged in navbar and links', function() {
+test.describe('Login form test', function() {
     this.timeout(0);
 
     test.beforeEach(function(done) {
