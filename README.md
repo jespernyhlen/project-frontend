@@ -52,7 +52,11 @@ Kombinationen fungerar bra, även om jag borde fått databasen och min micro-ser
 Det är fem olika usecases som jag testat genom Selenium.
 
 **Use-case 1.** "Från route "/login" ska inlogginsform med e-post, lösenord och en submit knapp finnas. Vid rätt ifyllnad uppvisas en laddnings-ikon."
+
 **Use-case 2.** "Från route "/register" ska inlogginsform med namn, efternamn, datum, e-post, lösenord och en submit knapp finnas. Vid rätt ifyllnad uppvisas en laddnings-ikon."
+
 **Use-case 3.** "Om användaren ej är inloggad ska den se nav-länkarna login samt register."
+
 **Use-case 4.** "Om användaren är inloggad ska den se nav-länkarna profile, trading samt logout."
+
 **Use-case 5.** "Om användaren är inloggad ska route "/chart" vara tillgänglig och visa en laddnings-ikon för datan samt en canvas för graf-representation."
