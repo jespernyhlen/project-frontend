@@ -1,10 +1,8 @@
 # Frontend application for simulating stocktrading
 
-[![Build Status](https://travis-ci.org/jespernyhlen/project-frontend.svg?branch=master)](https://travis-ci.org/jespernyhlen/project-frontend)
+[![Build Status](https://travis-ci.org/jespernyhlen/project-frontend.svg?branch=master)](https://travis-ci.org/jespernyhlen/project-frontend) [![Build Status](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/build-status/master) [![Code Coverage](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/?branch=master)
 
-[![Build Status](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/build-status/master) [![Code Coverage](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jespernyhlen/project-frontend/?branch=master)
-
-# Readme (English)
+# Readme
 
 ### Get started
 
@@ -40,7 +38,7 @@ För att få en fungerande inlogging och medvetenhet om användarens status anv�
 
 Login, register, profile samt logout är alla mindre komponenter som kommunicerar med backend-APIet. Vi hämtar och manipulerar datan från APIets databas genom att kalla på olika routes, med olika värden medskickade. Under "Login" autentiserar du användaren. "Register" används för att skapa en ny användare. "Profile" ger tillgång till dina tillgängliga medel som sparas i databasen, och kan utökas via denna sida. "Logout" loggar ut din användare och återställer localstorage till sitt ursprungsläge.
 
-#### Trading/socket.io
+### Trading/socket.io
 
 Trading är den del av applikationen som uppvisar en grafisk representation av min backend-socket. Här har jag valt verktyget graph.js som grund. Det är ett populärt open-source projekt som gör det enkelt att grafisk representera priserna i realtid. Det är byggt för att fungerar på alla moderna webbläsare och har ett inbyggt stöd för att fungera responsivt. Detta i kombination till en väl strukturerad dokumentation gjorde det till bra val. Denna del är uppdelad i flera komponenter för att förenkla och separera koden. Det finns komponenter för t.ex. grafen, samtliga objekt och de enskilda objekten.
 I kombination med verktyget socket.io client hämtas data och tillförs i denna graf. I samband med denna inhämtning jobbar jag parallelt med det aktuella backend-APIet för att även visa och manipulera användarens information i realtid.
@@ -53,12 +51,8 @@ Kombinationen fungerar bra, även om jag borde fått databasen och min micro-ser
 
 Det är fem olika usecases som jag testat genom Selenium.
 
-Use-case 1. "Från route "/login" ska inlogginsform med e-post, lösenord och en submit knapp finnas. Vid rätt ifyllnad uppvisas en laddnings-ikon."
-
-Use-case 2. "Från route "/register" ska inlogginsform med namn, efternamn, datum, e-post, lösenord och en submit knapp finnas. Vid rätt ifyllnad uppvisas en laddnings-ikon."
-
-Use-case 3. "Om användaren ej är inloggad ska den se nav-länkarna login samt register."
-
-Use-case 4. "Om användaren är inloggad ska den se nav-länkarna profile, trading samt logout."
-
-Use-case 5. "Om användaren är inloggad ska route "/chart" vara tillgänglig och visa en laddnings-ikon för datan samt en canvas för graf-representation."
+**Use-case 1.** "Från route "/login" ska inlogginsform med e-post, lösenord och en submit knapp finnas. Vid rätt ifyllnad uppvisas en laddnings-ikon."
+**Use-case 2.** "Från route "/register" ska inlogginsform med namn, efternamn, datum, e-post, lösenord och en submit knapp finnas. Vid rätt ifyllnad uppvisas en laddnings-ikon."
+**Use-case 3.** "Om användaren ej är inloggad ska den se nav-länkarna login samt register."
+**Use-case 4.** "Om användaren är inloggad ska den se nav-länkarna profile, trading samt logout."
+**Use-case 5.** "Om användaren är inloggad ska route "/chart" vara tillgänglig och visa en laddnings-ikon för datan samt en canvas för graf-representation."
