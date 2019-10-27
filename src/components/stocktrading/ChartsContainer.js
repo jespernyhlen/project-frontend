@@ -52,7 +52,7 @@ class ChartsContainer extends Component {
         this.socket.on('stocks', function(values) {
             if (that.state.data) {
                 var length = that.state.data.labels.length;
-                if (length < 40) {
+                if (length < 20) {
                     values.forEach((value, index) => {
                         that.state.data.datasets[index].data.push(
                             values[index].startingPoint
@@ -62,7 +62,7 @@ class ChartsContainer extends Component {
                         new Date().toLocaleTimeString()
                     );
                     that.setState(that.state);
-                } else if (length >= 40) {
+                } else if (length >= 20) {
                     values.forEach((value, index) => {
                         that.state.data.datasets[index].data.shift();
                         that.state.data.datasets[index].data.push(
