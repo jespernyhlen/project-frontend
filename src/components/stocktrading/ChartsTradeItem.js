@@ -110,7 +110,7 @@ const ChartsTradeItem = ({ item, userInfo, updateAccount }) => {
                     <p
                         style={{
                             textAlign: 'center',
-                            padding: '1em 0 1.5em',
+                            padding: '2em 0 1.5em',
                             lineHeight: '0',
                             zIndex: '100'
                         }}
