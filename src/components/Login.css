@@ -243,5 +243,7 @@ input:-webkit-autofill:active {
     .chart-trade-item-mob {
         width: 100% !important;
         padding: 1em !important;
+        background: #1c1f27 !important;
+        border-left: 0 !important;
     }
 }
