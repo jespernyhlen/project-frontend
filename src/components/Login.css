@@ -225,3 +225,23 @@ input:-webkit-autofill:active {
 .close.active {
     padding: 1em;
 }
+
+@media screen and (max-width: 600px) {
+    .login-form {
+        position: initial;
+        top: 50%;
+        left: calc(50% - 200px);
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(0%);
+    }
+
+    .chart-contain {
+        display: initial !important;
+    }
+
+    .chart-trade-item-mob {
+        width: 100% !important;
+        padding: 1em !important;
+    }
+}

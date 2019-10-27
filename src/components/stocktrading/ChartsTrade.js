@@ -168,7 +168,11 @@ const ChartsTrade = props => {
                                 return (
                                     <div
                                         key={index}
-                                        className={index > 0 ? 'brd-left' : ''}
+                                        className={
+                                            index > 0
+                                                ? 'chart-trade-item-mob brd-left'
+                                                : 'chart-trade-item-mob'
+                                        }
                                         style={{
                                             width: '25%',
                                             padding: '0 1em'
